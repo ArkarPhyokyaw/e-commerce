@@ -6,7 +6,6 @@ class CSRFToken
     {
         if(!Session::has("token"))
         {
-            
             echo Session::add("token",base64_encode(openssl_random_pseudo_bytes(32)));
         }else{
             echo  Session::get("token");

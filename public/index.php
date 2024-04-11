@@ -7,7 +7,7 @@ require_once "../bootstrap/init.php";
 
 $mailer = new Mail();
 
-//Session::remove("name");
+//Session::remove("token");
 //Session::add("name","tester1");
 //var_dump(Session::get("name"));
 // Session::replace("name","teste2");

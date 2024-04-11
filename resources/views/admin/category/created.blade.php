@@ -3,7 +3,9 @@
 @section('content')
 
 
-
+@if(App\Classes\Session::has("error"))
+    {{\App\Classes\Session::flash("error")}}
+@endif
 <h1 class="text-danger text-center">Created category </h1>
     <div class="container">
         <div class="col-md-8 offset-md-2">

@@ -10,7 +10,7 @@ class Request
         if (count($_GET) > 0) $result["get"] = $_GET;
         if (count($_POST) > 0) $result["post"] = $_POST;
         $result["file"] = $_FILES;
-        return $is_array ? $result : (object) $result;//here prepation neeed 
+        return json_decode(json_encode($result),$is_array);
     }
 
     public static function get($key)
@@ -25,8 +25,7 @@ class Request
 
     public static function old($key, $value)
     {
-        $all = self::all(true);
-        return isset($all[$key][$value]) ? $all[$key][$value] : "";
+       return isset(self::all()->$key->$value) ? self::all()->$key->$value:"";
     }
 
     public static function refresh()
